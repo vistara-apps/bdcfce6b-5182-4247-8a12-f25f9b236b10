@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { ThemeProvider } from './components/ThemeProvider'
+import { AppShell } from './components/layout/app-shell'
+import { Header } from './components/layout/header'
 
 export const metadata: Metadata = {
-  title: 'Base Mini App',
-  description: 'Built with Zara',
+  title: 'TokenProp Tours - Generate & Tokenize Real Estate Video Tours Instantly',
+  description: 'Enable real estate professionals to quickly generate branded video tours with tokenized asset integration for fractional ownership promotion.',
 }
 
 export default function RootLayout({
@@ -14,11 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <ThemeProvider defaultTheme="default">
+      <body className="bg-[hsl(20,10%,98%)]">
+        <AppShell
+          header={<Header />}
+        >
           {children}
-        </ThemeProvider>
+        </AppShell>
       </body>
     </html>
   )
 }
+
